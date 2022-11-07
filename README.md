@@ -1,7 +1,7 @@
 # creativeCode
 
 
-[PLACE_FOR_YOUR_IMAGE]
+https://user-images.githubusercontent.com/97693233/200330037-a3d18e20-8a9e-42b4-b32f-1526d6dceb8c.mp4
 
 This is a repository with my new hobby: creative code using JavaScript and canvas-sketch.  
 
