@@ -3,16 +3,10 @@ const random = require('canvas-sketch-util/random');
 const math = require('canvas-sketch-util/math');
 
 const settings = {
-  dimensions: [ 1080, 1080 ], 
+  // dimensions: [ 1080, 1080 ], 
   animate: true
 };
 
-// without canvas-sketch:
-// const animate = () => {
-//   console.log('domestika');
-//   requestAnimationFrame(animate);
-// };
-// animate();
 
 const sketch = ({ context, width, height }) => {
   const agents = [];
@@ -24,7 +18,7 @@ const sketch = ({ context, width, height }) => {
     agents.push(new Agent(x, y))
   }
   return ({ context, width, height }) => {
-    context.fillStyle = 'blue';
+    context.fillStyle = 'rgb(120, 100, 120)';
     context.strokeStyle = "white";
     context.fillRect(0, 0, width, height);
 

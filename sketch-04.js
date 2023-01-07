@@ -19,12 +19,17 @@ const params = {
   frame: 0, 
   animate: true,
   lineCap: 'butt',
+  background: 'rgb(200, 0, 100)', 
 }
+
 
 const sketch = () => {
   return ({ context, width, height, frame }) => {
-    context.fillStyle = 'white';
+   context.fillStyle = params.background;
+   
+
     context.fillRect(0, 0, width, height);
+
 
     const cols = params.cols;
     const rows = params.rows;
@@ -66,6 +71,7 @@ const sketch = () => {
       context.lineWidth = scale;
       context.lineCap = params.lineCap;
 
+      context.strokeStyle = "white";
 
       context.beginPath();
       context.moveTo(w * -0.5, 0);
@@ -96,6 +102,8 @@ const createPane = () => {
   folder.addInput(params, 'amp', { min: 0, max: 1});
   folder.addInput(params, 'animate');
   folder.addInput(params, 'frame', { min: 0, max: 999 });
+
+  folder.addInput(params, 'background', {r: 200, g: 0, b: 100})
 
   
 };
