@@ -3,21 +3,15 @@ const random = require('canvas-sketch-util/random');
 const math = require('canvas-sketch-util/math');
 
 const settings = {
-  dimensions: [ 600, 1080 ],
+  // dimensions: [ 1080, 1080 ],
   animate: true
 };
 
-// without canvas-sketch:
-// const animate = () => {
-//   console.log('domestika');
-//   requestAnimationFrame(animate);
-// };
-// animate();
 
 const sketch = ({ context, width, height }) => {
   const agents = [];
 
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 20; i++) {
     const x = random.range(0, width);
     const y = random.range(0, height);
 
@@ -40,7 +34,7 @@ const sketch = ({ context, width, height }) => {
 
         if (dist > 600) continue;
 
-        context.lineWidth = math.mapRange(dist, 0, 100, 2, 1.5)
+        context.lineWidth = math.mapRange(dist, 0, 100, 4, 1.5)
 
         context.beginPath();
         context.moveTo(agent.pos.x, agent.pos.y);
@@ -95,7 +89,7 @@ draw(context) {
   context.save();
   context.translate(this.pos.x, this.pos.y);
 
-  context.lineWidth = 4;
+  // context.lineWidth = 10;
 
   context.beginPath();
   context.arc(0, 0, this.radius, 0, Math.PI * 2);
